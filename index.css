@@ -11,14 +11,29 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  /* background-color: #ff6f61; */
   color: black;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Logo and Company Name Styles */
+.title {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
 .logo {
   height: 50px;
+  margin-right: 10px;
 }
+
+.company-name {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
 
 .nav-items ul {
   display: flex;
