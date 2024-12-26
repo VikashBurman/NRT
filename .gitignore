@@ -1,0 +1,19 @@
+# Parcel cache
+.parcel-cache/
+
+# Build output
+dist/
+
+# Node modules
+node_modules/
+
+# Environment variables
+.env
+
+# Logs
+*.log
+
+# OS and IDE files
+.DS_Store
+.idea/
+.vscode/
