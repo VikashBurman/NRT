@@ -27,6 +27,7 @@ body {
   height: 50px;
   margin-right: 10px;
 }
+
 button {
   background-color: #333; /* Primary color for the button */
   color: white; /* Text color */
@@ -155,4 +156,39 @@ button:active {
 
 .res-delivery-time {
   color: #ff5722; /* Orange for delivery time */
+}
+
+/* Shimmer Container */
+.shimmer-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+/* Shimmer Card */
+.shimmer-card {
+  width: 300px;
+  height: 250px;
+  border-radius: 12px;
+  background: linear-gradient(
+    90deg,
+    #e0e0e0 25%,
+    #f0f0f0 50%,
+    #e0e0e0 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Shimmer Animation */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }

@@ -1,14 +1,9 @@
 import RestaurantCard from "./RestaurantCard";
-import restaurantList from "../utils/mockData";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 
 const Body = () => {
-  const [restList, setRestList] = useState([]);
-
-  // if(restList.length === 0 ){
-  //   return <Shimmer/>
-  // }
+  const [restaurantList, setRestaurantList] = useState([]);
 
   useEffect(() => {
     fetchData();
@@ -20,24 +15,29 @@ const Body = () => {
     );
     const json = await data.json();
     // console.log(json) 
-    setRestList(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants)
+    setRestaurantList(json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants)
   };
+
+
+  if(restaurantList.length === 0 ){
+    return <Shimmer/>
+  }
 
   return (
     <div className="body">
       <button
         onClick={() => {
-          const filteredList = restList.filter(
-            (res) => res.data.avgRating > 4.2
+          const filteredList = restaurantList.filter(
+            (res) => res.info.avgRating > 4.5
           );
-          setRestList(filteredList);
+          setRestaurantList(filteredList);
         }}
       >
         Top Rated Restaurant
       </button>
       <div className="res-container">
-        {restList.map((restaurant) => (
-          <RestaurantCard   resData={restaurant} />
+        {restaurantList.map((restaurant) => (
+          <RestaurantCard key={restaurant.info.id} resData={restaurant} />
         ))}
       </div>
     </div>
