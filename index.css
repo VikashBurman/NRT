@@ -27,6 +27,29 @@ body {
   height: 50px;
   margin-right: 10px;
 }
+button {
+  background-color: #333; /* Primary color for the button */
+  color: white; /* Text color */
+  padding: 10px 20px; /* Spacing inside the button */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 16px; /* Font size */
+  font-weight: bold; /* Bold text */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-bottom: 20px; /* Add spacing between button and other elements */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+button:hover {
+  background-color: #555; /* Slightly darker shade on hover */
+  transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+button:active {
+  background-color: #666; /* Even darker shade on click */
+  transform: translateY(0); /* Reset lift effect on click */
+}
 
 .company-name {
   font-size: 24px;
