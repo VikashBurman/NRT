@@ -167,6 +167,51 @@ button:active {
   padding: 20px;
 }
 
+/* Search Container */
+.search-container {
+  display: flex; /* Align input and button side by side */
+  justify-content: center; /* Center the search box */
+  margin: 20px 0; /* Add some space above and below */
+}
+
+/* Search Input */
+.search-container input {
+  width: 300px; /* Set the input width */
+  padding: 8px; /* Add padding for a clean look */
+  border: 2px solid #ddd; /* Light border */
+  border-radius: 4px; /* Rounded corners */
+  font-size: 16px; /* Adjust font size */
+  outline: none; /* Remove focus outline */
+  margin-right: 10px; /* Space between input and button */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: border 0.3s ease; /* Smooth focus effect */
+}
+
+/* Input Focus */
+.search-container input:focus {
+  border: 2px solid #4caf50; /* Change border color on focus */
+}
+
+/* Search Button */
+.search-container button {
+  padding: 10px 20px; /* Adjust padding for size */
+  background-color: #4caf50; /* Green background */
+  color: white; /* White text */
+  border: none; /* Remove border */
+  border-radius: 4px; /* Rounded corners */
+  font-size: 16px; /* Adjust font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Button Hover */
+.search-container button:hover {
+  background-color: #45a049; /* Slightly darker green */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+
 /* Shimmer Card */
 .shimmer-card {
   width: 300px;
