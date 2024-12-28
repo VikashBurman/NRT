@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import foodFireLogo from "../../Images/foodlogo.png";
 
 const Title = () => (
@@ -10,6 +10,12 @@ const Title = () => (
 
 const Header = () => {
   const [btn, setBtn] = useState("Login");
+  // console.log("header renders")
+  // useEffect(()=>{
+  //   console.log("useffect called");
+  // },[])
+
+
   return (
     <div className="header">
       <Title />
