@@ -212,6 +212,101 @@ button:active {
 }
 
 
+.res-container a {
+  text-decoration: none; /* Removes the default underline */
+  color: inherit; /* Inherits text color from parent */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.res-container a:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+.item-price {
+  font-size: 1.2rem;
+  color: #28a745;
+  font-weight: bold;
+}
+/* Restaurant Details */
+.restaurant-details {
+  text-align: center;
+  background-color: #fff;
+  padding: 30px 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.restaurant-name {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.restaurant-cuisines {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.restaurant-price {
+  font-size: 1rem;
+  color: #777;
+}
+
+/* Menu Section */
+.menu {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.menu-item {
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.item-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.item-details {
+  padding: 15px;
+  text-align: center;
+}
+
+.item-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.item-price {
+  font-size: 1.2rem;
+  color: #28a745;
+  font-weight: bold;
+}
+
+/* Hover Effects */
+.menu-item:hover .item-name {
+  color: #007bff;
+}
+
+
+
 /* Shimmer Card */
 .shimmer-card {
   width: 300px;
