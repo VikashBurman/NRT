@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import foodFireLogo from "../../Images/foodlogo.png";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Title = () => (
   <a href="/" className="title">
@@ -11,16 +12,16 @@ const Title = () => (
 
 const Header = () => {
   const [btn, setBtn] = useState("Login");
-  // console.log("header renders")
-  // useEffect(()=>{
-  //   console.log("useffect called");
-  // },[])
+  const isOnline = useOnlineStatus();
 
   return (
     <div className="header">
       <Title />
       <div className="nav-items">
         <ul>
+          <li>
+         Online Status:{isOnline?"Online":"Offline"}
+          </li>
           <li>
           <Link to="/">Home</Link>
           </li>
