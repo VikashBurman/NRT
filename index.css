@@ -332,3 +332,187 @@ button:active {
     background-position: 200% 0;
   }
 }
+/* Container for the item list */
+.item-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 15px;
+}
+
+/* Individual item card */
+.item-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: #fff;
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.item-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Left content (item details) */
+.item-content {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex: 1;
+}
+
+/* Item name */
+.item-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+/* Item price */
+.item-price {
+  font-size: 16px;
+  font-weight: 500;
+  color: #28a745;
+  margin: 0;
+}
+
+/* Item description */
+.item-description {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Add button */
+.add-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 15px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+  .item-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .add-button {
+    align-self: flex-end;
+    margin-top: 10px;
+  }
+}
+/* RestaurantCategory container */
+.restaurant-category {
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.restaurant-category:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Category header */
+.category-header {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  padding: 15px 20px;
+  margin: 0;
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #eaeaea;
+  cursor: pointer;
+}
+
+/* Items container */
+.items-container {
+  padding: 15px 20px;
+  background-color: #fff;
+}
+/* Center the component on the page */
+.restaurant-category {
+  width: 80%; /* Adjust the width as needed */
+  max-width: 800px; /* Limit the maximum width for better readability */
+  margin: 0 auto; /* Center horizontally */
+  margin-top: 20px; /* Add some space from the top */
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.restaurant-category:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Category header */
+.category-header {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  padding: 15px 20px;
+  margin: 0;
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  border-bottom: 1px solid #eaeaea;
+  transition: background-color 0.3s ease;
+  text-align: center; /* Center-align text */
+}
+
+.category-header:hover {
+  background-color: #f1f1f1;
+}
+
+/* Items container */
+.items-container {
+  padding: 15px 20px;
+  background-color: #fff;
+}
+
+/* Arrow icon */
+.category-header span:last-child {
+  margin-left: 10px;
+  font-size: 16px;
+  color: #666;
+  transition: transform 0.3s ease;
+}
+@media (max-width: 600px) {
+  .restaurant-category {
+    width: 90%;
+    margin-top: 30px;
+  }
+
+  .category-header {
+    font-size: 18px;
+    padding: 10px 15px;
+  }
+
+  .category-header span:last-child {
+    font-size: 14px;
+  }
+}

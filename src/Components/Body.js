@@ -33,7 +33,7 @@ const Body = () => {
     return <h1>Check Your Internet Connection</h1>;
   }
 
-  console.log(restaurantList);
+  // console.log(restaurantList);
   const RestaurantStatus = RestaurantWithLabel(RestaurantCard);
 
   return restaurantList.length === 0 ? (
