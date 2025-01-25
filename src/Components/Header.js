@@ -31,7 +31,9 @@ const Header = () => {
           <li>
             <Link to="/contact">Contact us</Link>
           </li>
-          <li>Cart</li>
+          <li>
+            <Link to="/contact">Cart</Link>
+          </li>
           <button
             onClick={() => {
               btn === "Login" ? setBtn("Logout") : setBtn("Login");

@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { RestaurantWithLabel } from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
@@ -18,7 +18,7 @@ const Body = () => {
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.8045665&lng=86.2028754&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
     const json = await data.json();
-    
+
     // console.log(json)
     setRestaurantList(
       json.data.cards[1].card.card.gridElements.infoWithStyle.restaurants
@@ -29,11 +29,12 @@ const Body = () => {
   };
 
   const onlineStatus = useOnlineStatus();
-  if(!onlineStatus){
-    return <h1>Check Your Internet Connection</h1>
+  if (!onlineStatus) {
+    return <h1>Check Your Internet Connection</h1>;
   }
- 
-  
+
+  console.log(restaurantList);
+  const RestaurantStatus = RestaurantWithLabel(RestaurantCard);
 
   return restaurantList.length === 0 ? (
     <Shimmer />
@@ -73,13 +74,16 @@ const Body = () => {
         Top Rated Restaurant
       </button>
       <div className="res-container">
-      
         {filteredRestaurant.map((restaurant) => (
           <Link
             key={restaurant.info.id}
             to={"/restaurant/" + restaurant.info.id}
           >
-            <RestaurantCard resData={restaurant} />
+            {restaurant.info.isOpen ? (
+              <RestaurantStatus resData={restaurant} />
+            ) : (
+              <RestaurantCard resData={restaurant} />
+            )}
           </Link>
         ))}
       </div>

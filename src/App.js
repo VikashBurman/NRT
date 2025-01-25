@@ -46,6 +46,9 @@ const appRouter = createBrowserRouter(
     },
   ],
   //for warning solving of future flags in conosle
+  /*
+    multi line comment
+  */
   {
     future: {
       v7_relativeSplatPath: true,
