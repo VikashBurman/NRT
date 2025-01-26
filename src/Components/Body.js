@@ -1,8 +1,9 @@
 import RestaurantCard, { RestaurantWithLabel } from "./RestaurantCard";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
   const [restaurantList, setRestaurantList] = useState([]);
@@ -87,6 +88,7 @@ const Body = () => {
           </Link>
         ))}
       </div>
+      
     </div>
   );
 };

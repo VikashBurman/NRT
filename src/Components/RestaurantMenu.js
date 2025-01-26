@@ -1,11 +1,15 @@
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
-import { CDN_URL } from "../utils/constant";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 import RestaurantCategory from "./RestaurantCategory";
+import { useContext, useState } from "react";
+import UserContext from "../utils/UserContext";
 
 const RestaurantMenu = () => {
   const { resId } = useParams();
+  const [showIndex, setShowIndex] = useState(null);
+  // const {loggedInUser} = useContext(UserContext);
+  
 
   const resInfo = useRestaurantMenu(resId);
 
@@ -15,7 +19,8 @@ const RestaurantMenu = () => {
     resInfo?.cards[2]?.card?.card?.info;
 
   const { itemCards } =
-    resInfo?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.[2]?.card?.card;
+    resInfo?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.[2]?.card
+      ?.card;
 
   const categories =
     resInfo?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
@@ -26,11 +31,15 @@ const RestaurantMenu = () => {
   // console.log(categories);
   return (
     <>
-      {
-        categories?.map((category,index)=>(
-          <RestaurantCategory key={index}  data={category?.card?.card} />
-        ))
-      }
+      {/* <h2>{loggedInUser}</h2> */}
+      {categories?.map((category, index) => (
+        <RestaurantCategory
+          key={index}
+          showItem={index === showIndex ? true : false}
+          data={category?.card?.card}
+          setShowIndex={()=>setShowIndex(index)}
+        />
+      ))}
     </>
   );
 };

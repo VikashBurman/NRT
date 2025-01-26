@@ -1,7 +1,8 @@
-import { useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import foodFireLogo from "../../Images/foodlogo.png";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Title = () => (
   <a href="/" className="title">
@@ -10,10 +11,14 @@ const Title = () => (
   </a>
 );
 
+
+
 const Header = () => {
   const [btn, setBtn] = useState("Login");
   const isOnline = useOnlineStatus();
-
+  const {loggedInUser}= useContext(UserContext)
+  // console.log(loggedInUser);
+  
   return (
     <div className="header">
       <Title />
@@ -41,6 +46,7 @@ const Header = () => {
           >
             {btn}
           </button>
+          <li>{loggedInUser}</li>
         </ul>
       </div>
     </div>
