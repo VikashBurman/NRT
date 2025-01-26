@@ -3,6 +3,8 @@ import foodFireLogo from "../../Images/foodlogo.png";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
+import { useSelector,useDispatch } from "react-redux";
+import { clearCart } from "../utils/CartSlice";
 
 const Title = () => (
   <a href="/" className="title">
@@ -11,24 +13,24 @@ const Title = () => (
   </a>
 );
 
-
-
 const Header = () => {
   const [btn, setBtn] = useState("Login");
   const isOnline = useOnlineStatus();
-  const {loggedInUser}= useContext(UserContext)
+  const { loggedInUser } = useContext(UserContext);
+  const dispatch = useDispatch();
   // console.log(loggedInUser);
-  
+  //what do we need what portion
+  const cartItems = useSelector((store) => store.cart.items);
+  // console.log(cartItems);
+
   return (
     <div className="header">
       <Title />
       <div className="nav-items">
         <ul>
+          <li>Online Status:{isOnline ? "Online" : "Offline"}</li>
           <li>
-         Online Status:{isOnline?"Online":"Offline"}
-          </li>
-          <li>
-          <Link to="/">Home</Link>
+            <Link to="/">Home</Link>
           </li>
           <li>
             <Link to="/about">About us</Link>
@@ -37,7 +39,7 @@ const Header = () => {
             <Link to="/contact">Contact us</Link>
           </li>
           <li>
-            <Link to="/contact">Cart</Link>
+            <Link to="/cart">Cart-({cartItems.length})</Link>
           </li>
           <button
             onClick={() => {
@@ -45,6 +47,13 @@ const Header = () => {
             }}
           >
             {btn}
+          </button>
+          <button
+            onClick={() => {
+              dispatch(clearCart());
+            }}
+          >
+            Clear
           </button>
           <li>{loggedInUser}</li>
         </ul>

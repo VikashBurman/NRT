@@ -9,6 +9,7 @@ const Body = () => {
   const [restaurantList, setRestaurantList] = useState([]);
   const [searchText, setSearchText] = useState("");
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
+  const { setUserName, loggedInUser } = useContext(UserContext);
 
   useEffect(() => {
     fetchData();
@@ -64,6 +65,14 @@ const Body = () => {
           Search
         </button>
       </div>
+      <div className="search-container">
+        <input
+          type="text"
+          value={loggedInUser}
+          onChange={(e) => setUserName(e.target.value)}
+        />
+        <button>Username</button>
+      </div>
       <button
         onClick={() => {
           const filteredList = restaurantList.filter(
@@ -88,7 +97,6 @@ const Body = () => {
           </Link>
         ))}
       </div>
-      
     </div>
   );
 };
